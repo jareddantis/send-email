@@ -138,9 +138,9 @@ const sendmail = {
     const validation = sendmail.validate()
     sendmail.toggle_buttons(validation.result)
     if (validation.result) {
-      $('#result').value = sendmail.serialize()
+      $('#result').innerText = sendmail.serialize()
     } else {
-      $('#result').value = validation.cause
+      $('#result').innerText = validation.cause
     }
 
     // Toggle delete button
