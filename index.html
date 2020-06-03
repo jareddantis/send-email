@@ -6,7 +6,7 @@
   <!-- Metadata -->
   <meta name="description" content="Email templates, made one click away.">
   <meta name="charset" content="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
    <!-- Twitter card -->
   <meta name="twitter:card" content="summary">
@@ -18,10 +18,10 @@
   <!-- Resource prioritization for performance -->
   <link rel="preconnect" href="https://storage.googleapis.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preload" href="https://fonts.googleapis.com/css?family=Inter:400,700|Material+Icons|Roboto+Mono&display=swap" as="style">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Inter:400,700|Roboto+Mono&display=swap" as="style">
 
   <!-- Page styles -->
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:400,700|Material+Icons|Roboto+Mono&display=swap" as="style">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:400,700|Roboto+Mono&display=swap" as="style">
   <link rel="stylesheet" type="text/css" href="./style/style.css">
 
   <!-- Favicon -->
@@ -40,10 +40,10 @@
 <body>
   <div id="header">
     <div class="left">
-      <h1><i class="material-icons">mail</i> send-<strong>e.ml</strong></h1>
+      <h1><img src="favicon/logo.png"> send-<strong>e.ml</strong></h1>
     </div>
     <div class="right">
-      <i class="material-icons" id="reset">delete</i>
+      <span id="reset">Reset</span>
     </div>
   </div>
   <div id="app">
@@ -55,22 +55,25 @@
     <!-- Composer -->
     <div id="composer">
       <div class="row">
-        <div class="label"><span>To</span></div>
-        <div class="field"><input type="email" placeholder="recipient@example.com" id="field-recipient"></textarea></div>
+        <div class="label"><label for="field-recipient">To</label></div>
+        <div class="field"><input type="email" placeholder="recipient@example.com" id="field-recipient"></div>
       </div>
       <div class="row">
-        <div class="label"><span>Cc</span></div>
-        <div class="field"><input type="email" placeholder="Optional. Separate multiple addresses with a comma." id="field-cc"></textarea></div>
+        <div class="label"><label for="field-cc">Cc</label></div>
+        <div class="field"><input type="email" placeholder="Optional. Separate multiple addresses with a comma." id="field-cc"></div>
       </div>
       <div class="row">
-        <div class="label"><span>Bcc</span></div>
-        <div class="field"><input type="email" placeholder="Optional. Separate multiple addresses with a comma." id="field-bcc"></textarea></div>
+        <div class="label"><label for="field-bcc">Bcc</label></div>
+        <div class="field"><input type="email" placeholder="Optional. Separate multiple addresses with a comma." id="field-bcc"></div>
       </div>
       <div class="row">
-        <div class="label"><span>Subject</span></div>
-        <div class="field"><input type="email" placeholder="Email subject" maxlength="78" id="field-subject"></textarea></div>
+        <div class="label"><label for="field-subject">Subj</label></div>
+        <div class="field"><input type="text" placeholder="Email subject" maxlength="78" id="field-subject"></div>
       </div>
-      <textarea maxlength="1500" id="field-body" placeholder="Good day,"></textarea>
+      <div class="row">
+        <div class="label"><label for="field-body">Body</label></div>
+        <div class="field"><textarea maxlength="1500" id="field-body" placeholder="Good day..."></textarea></div>
+      </div>
       <span id="charcount">0/1500</span>
     </div>
     <div class="buttons">
@@ -96,12 +99,12 @@
       </div>
       <div>
         <h2>How does it work?</h2>
-        <p>This tool allows you to create <code>mailto</code> links <a href="https://en.wikipedia.org/wiki/Mailto" target="_blank">(Wikipedia &nearr;)</a>, which are a special type of link that directs a user to an email address instead of a webpage.</p>
+        <p>This tool allows you to create <code>mailto</code> links <a href="https://en.wikipedia.org/wiki/Mailto" target="_blank" rel="noopener">(Wikipedia &nearr;)</a>, which are a special type of link that directs a user to an email address instead of a webpage.</p>
         <p>To use the generated <code>mailto</code> link, paste it into your browser address bar and hit Enter <strong>or</strong> shorten the link and use the shortened link instead.</p>
       </div>
       <div>
         <h2>Which link shortener are you using?</h2>
-        <p>send-e.ml uses the fantastic <a href="https://shrtco.de/docs/" target="_blank">shrtco.de &nearr;</a> link shortening API. Shortening your email template links through this app means that you agree to shrtcode's <a href="https://shrtco.de/tos" target="_blank">Terms of Service &nearr;</a>.</p>
+        <p>send-e.ml uses the fantastic <a href="https://shrtco.de/docs/" target="_blank" rel="noopener">shrtco.de &nearr;</a> link shortening API. Shortening your email template links through this app means that you agree to shrtcode's <a href="https://shrtco.de/tos" target="_blank" rel="noopener">Terms of Service &nearr;</a>.</p>
         <p>You're free to use any other link shortener you want! Just press <strong>Copy Link</strong> and paste the link in your preferred link shortener.</p>
       </div>
       <div>
@@ -111,15 +114,15 @@
       </div>
       <div>
         <h2>Can I see the source code?</h2>
-        <p>Absolutely! This website is hosted on GitHub Pages, and the source code is available on <a href="https://github.com/jareddantis/send-email" target="_blank">GitHub &nearr;</a></p>
-        <p>I'd love to hear what you think! Hit me up on <a href="https://github.com/jareddantis" target="_blank">Twitter &nearr;</a></p>
+        <p>Absolutely! This website is hosted on GitHub Pages, and the source code is available on <a href="https://github.com/jareddantis/send-email" target="_blank" rel="noopener">GitHub &nearr;</a></p>
+        <p>I'd love to hear what you think! Hit me up on <a href="https://github.com/jareddantis" target="_blank" rel="noopener">Twitter &nearr;</a></p>
       </div>
     </div>
 
     <!-- Footer -->
     <div class="footer">
-      <p>made with &hearts; from the Philippines by</p>
-      <a href="https://jared.gq" target="_blank"><img src="https://jared.gq/img/name.svg" alt="Jared Dantis"></a>
+      <p>made with <span class="red">&hearts;</span> from the Philippines by</p>
+      <a href="https://jared.gq" target="_blank" rel="noopener"><img src="https://jared.gq/img/name.svg" alt="Jared Dantis"></a>
     </div>
   </div>
 

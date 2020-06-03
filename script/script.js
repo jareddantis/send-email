@@ -101,9 +101,9 @@ const sendmail = {
         .then((result) => {
           if (result.ok) {
             const { short_link, full_short_link, full_share_link } = result.result
-            let share_title = '<a href="' + full_short_link + '" target="_blank">' + short_link + '</a>',
+            let share_title = '<a href="' + full_short_link + '" target="_blank" rel="noopener">' + short_link + '</a>',
               share_msg = 'Link shortened and copied to clipboard.'
-            share_msg += ' <a href="' + full_share_link + '" target="_blank">Share &nearr;</a>'
+            share_msg += ' <a href="' + full_share_link + '" target="_blank" rel="noopener">Share &nearr;</a>'
             $('#success-title').innerHTML = share_title
             $('#success-msg').innerHTML =  share_msg
             sendmail._copyToClipboard(full_short_link)
