@@ -5,7 +5,7 @@ html, body {
   margin: 0;
   padding: 0;
 }
-h1, h2, h3, p, span, input, textarea, button, code, label {
+h1, h2, h3, p, span, input, textarea, button, code, label, pre {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Helvetica', 'Segoe UI', 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased !important;
   -moz-osx-font-smoothing: grayscale;
@@ -15,7 +15,7 @@ h1, h2, h3, p, span, input, textarea, button, code, label {
 a {
   text-decoration: none;
 }
-code, .monospace {
+code, pre {
   font-family: 'Roboto Mono', 'Consolas', 'Monaco', monospace;
 }
 code {
@@ -184,6 +184,12 @@ div.buttons button.disabled {
   background: #001949;
   color: #FFC2B8;
   cursor: default;
+  border-radius: 8px;
+  padding: 1rem;
+  overflow-wrap: anywhere;
+  overflow-x: hidden;
+  white-space: pre-wrap;
+}
 }
 hr {
   margin: 4rem 0 2rem;
