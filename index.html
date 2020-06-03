@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>send-e.ml &mdash; Create one-click email templates</title>
+
+  <!-- Resource prioritization for performance -->
+  <link rel="preconnect" href="https://storage.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Inter:400,700|Material+Icons|Roboto+Mono&display=swap" as="style">
+
+  <!-- Page styles -->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:400,700|Material+Icons|Roboto+Mono&display=swap" as="style">
+  <link rel="stylesheet" type="text/css" href="./style/style.css">
+</head>
+<body>
+  <div id="header">
+    <div class="left">
+      <h1><i class="material-icons">mail</i> send-<strong>e.ml</strong></h1>
+    </div>
+    <div class="right">
+      <i class="material-icons" id="reset">delete</i>
+    </div>
+  </div>
+  <div id="app">
+    <div class="intro">
+      <h2>Create email templates that you can use as links</h2>
+      <p>Great for <strong>support emails, petition emails...</strong><br>basically everywhere you need a consistent email format.</p>
+    </div>
+
+    <!-- Composer -->
+    <div id="composer">
+      <div class="row">
+        <div class="label"><span>To</span></div>
+        <div class="field"><input type="email" placeholder="recipient@example.com" id="field-recipient"></textarea></div>
+      </div>
+      <div class="row">
+        <div class="label"><span>Cc</span></div>
+        <div class="field"><input type="email" placeholder="Optional. Separate multiple addresses with a comma." id="field-cc"></textarea></div>
+      </div>
+      <div class="row">
+        <div class="label"><span>Bcc</span></div>
+        <div class="field"><input type="email" placeholder="Optional. Separate multiple addresses with a comma." id="field-bcc"></textarea></div>
+      </div>
+      <div class="row">
+        <div class="label"><span>Subject</span></div>
+        <div class="field"><input type="email" placeholder="Email subject" maxlength="78" id="field-subject"></textarea></div>
+      </div>
+      <textarea maxlength="1500" id="field-body" placeholder="Good day,"></textarea>
+      <span id="charcount">0/1500</span>
+    </div>
+    <div class="buttons">
+      <button id="submit">Copy link</button>
+      <button id="shorten">Shorten link</button>
+    </div>
+    <div id="success">
+      <h3 id="success-title">Success!</h3>
+      <p id="success-msg"></p>
+    </div>
+    <textarea readonly id="result" class="monospace"></textarea>
+
+    <!-- Details -->
+    <hr>
+    <div class="details">
+      <div>
+        <h2>How does it work?</h2>
+        <p>This tool allows you to create <code>mailto</code> links <a href="https://en.wikipedia.org/wiki/Mailto" target="_blank">(Wikipedia &nearr;)</a>, which are a special type of link that directs a user to an email address instead of a webpage.</p>
+      </div>
+      <div>
+        <h2>Which link shortener are you using?</h2>
+        <p>send-e.ml uses the fantastic <a href="https://shrtco.de/docs/" target="_blank">shrtco.de &nearr;</a> link shortening API. Shortening your email template links through this app means that you agree to shrtcode's <a href="https://shrtco.de/tos" target="_blank">Terms of Service &nearr;</a></p>
+        <p>You're free to use any other link shortener you want! Just press <strong>Copy Link</strong> and paste the link in your preferred link shortener.</p>
+      </div>
+      <div>
+        <h2>Is my data being stored?</h2>
+        <p>Link generation is performed completely on your device, all through JavaScript. None of your data is transmitted remotely from this app, until you press the <strong>Shorten Link button.</strong></p>
+        <p>send-e.ml itself does not use cookies.</p>
+      </div>
+      <div>
+        <h2>Can I see the source code?</h2>
+        <p>Absolutely! The source code for this website is available on <a href="https://github.com/jareddantis/send-email" target="_blank">GitHub &nearr;</a></p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>made with &hearts; from the Philippines by</p>
+      <a href="https://jared.gq" target="_blank"><img src="https://jared.gq/img/name.svg" alt="Jared Dantis"></a>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script type="text/javascript" src="./script/script.js" defer></script>
+</body>
+</html>
