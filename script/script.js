@@ -71,15 +71,13 @@ const sendmail = {
       body = encodeURIComponent($('#field-body').value)
     let query_string = []
 
-    for (let i = 0; i < cc.length; i++) {
-      if (cc[i].length) {
-        query_string.push('cc=' + encodeURIComponent(cc[i]))
-      }
+    if (cc.length) {
+      let joined_ccs = cc.join(';')
+      query_string.push('cc=' + encodeURIComponent(joined_ccs))
     }
-    for (let i = 0; i < bcc.length; i++) {
-      if (bcc[i].length) {
-        query_string.push('bcc=' + encodeURIComponent(bcc[i]))
-      }
+    if (bcc.length) {
+      let joined_bccs = bcc.join(';')
+      query_string.push('bcc=' + encodeURIComponent(joined_bccs))
     }
     query_string.push('subject=' + subject)
     query_string.push('body=' + body)
