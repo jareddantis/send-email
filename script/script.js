@@ -71,11 +71,11 @@ const sendmail = {
       body = encodeURIComponent($('#field-body').value)
     let query_string = []
 
-    if (cc.length) {
+    if (cc.length && cc[0].length) {
       let joined_ccs = cc.join(';')
       query_string.push('cc=' + encodeURIComponent(joined_ccs))
     }
-    if (bcc.length) {
+    if (bcc.length && bcc[0].length) {
       let joined_bccs = bcc.join(';')
       query_string.push('bcc=' + encodeURIComponent(joined_bccs))
     }
